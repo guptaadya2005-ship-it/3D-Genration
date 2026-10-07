@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root,
+.light {
+  --editor-bg: #e8edf3;
+  --editor-chrome: #f7f9fc;
+  --editor-panel: #f4f6fa;
+  --editor-viewport: #d5dce6;
+  --editor-border: #c9d2de;
+  --editor-text: #1c2430;
+  --editor-muted: #5d6b7c;
+  --editor-hover: #e6ebf2;
+  --editor-input: #ffffff;
+  --editor-accent: #2f6fed;
+  --editor-accent-soft: rgba(47, 111, 237, 0.14);
+}
+
+.dark {
+  --editor-bg: #101318;
+  --editor-chrome: #161b22;
+  --editor-panel: #1b212b;
+  --editor-viewport: #12151a;
+  --editor-border: #2b3340;
+  --editor-text: #edf1f7;
+  --editor-muted: #93a0b3;
+  --editor-hover: #242c38;
+  --editor-input: #121722;
+  --editor-accent: #5b8def;
+  --editor-accent-soft: rgba(91, 141, 239, 0.18);
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: var(--editor-bg);
+  color: var(--editor-text);
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  opacity: 0.4;
+}
